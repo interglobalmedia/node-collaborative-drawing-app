@@ -1,0 +1,22 @@
+{
+    "name": "collaborative-drawing-app",
+    "version": "0.0.1",
+    "description": "A Collaborative Drawing App Created With Nodejs and Socket.io",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "author": "Maria D. Campbell",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.16.4",
+        "moment": "^2.22.2",
+        "socket.io": "^2.1.1"
+    },
+    "devDependencies": {
+        "eslint": "^5.9.0",
+        "expect": "^23.6.0",
+        "mocha": "^5.2.0",
+        "node-static": "^0.7.11"
+    }
+}

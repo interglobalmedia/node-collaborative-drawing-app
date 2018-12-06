@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Collaborative Drawing Application</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="Site">
+    <div class="Site-content">
+        <div class="clear-tool">
+            <a class="clear" href="#">Clear</a>
+        </div>
+        <canvas id="drawing"></canvas>
+    </div>
+    <footer class="site-footer">
+        <div class="identity">
+            <li class="dagger">&dagger;</li>
+            <p class="identity-text">© 2018 Maria D. Campbell</p>
+            <li class="dagger">&dagger;</li>
+        </div>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="drawing.js "></script>
+</body>
+
+</html>
