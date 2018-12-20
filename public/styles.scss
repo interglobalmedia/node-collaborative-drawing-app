@@ -5,21 +5,38 @@
     padding: 0;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 html {
     overflow-x: hidden;
 }
 
 body {
     font-family: 'Muli', sans-serif;
+    font-size: 1.5rem;
+    background: #d2cc77;
 }
 
-a.clear {
-    padding-top: 12px;
-    vertical-align: bottom;
+header {
+    height: 70px;
+    width: 100%;
+    background: #754076;
+    p {
+        color: antiquewhite;
+        font-family: 'Gochi Hand', cursive;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 1.7rem;
+    }
 }
 
-#canvas {
-    position: fixed;
+.clear-tool {
+    background: #899a78;
+    height: 50px;
 }
 
 .clear {
@@ -28,14 +45,44 @@ a.clear {
     text-align: center;
 }
 
+.btn-container {
+    display: flex;
+}
+
+a.clear {
+    padding-top: 0.25rem;
+    padding-bottom: 1rem;
+    vertical-align: middle;
+    font-size: 1.2rem;
+    text-decoration: none;
+    background: pink;
+    width: 70px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    &hover,
+    &focus {
+        color: #494032;
+    }
+}
+
+#canvas {
+    position: fixed;
+    width: 100%;
+}
+
 
 /* footer basic styling */
 
 .site-footer {
     width: 100%;
-    height: 50px;
-    margin-bottom: 0.5rem;
+    height: 70px;
+    margin-bottom: 0;
     padding-top: 20px;
+    padding-bottom: 20px;
+    background: #494032;
+    color: antiquewhite;
 }
 
 .identity {
@@ -74,13 +121,13 @@ root {
     min-height: 100vh
 }
 
-.Sitecontent {
+.Site-content {
     flex: 1 0 auto;
     padding: var(--space) var(--space) 0;
     width: 100%
 }
 
-.Sitecontent:after {
+.Site-content:after {
     content: "\A0";
     display: block;
     margin-top: var(--space);
