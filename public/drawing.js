@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const width = window.innerWidth;
     const height = window.innerHeight;
     // resize canvas size to size of window
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
     // base settings
     canvas.style.backgroundColor = '#d2cc77';
 
@@ -23,27 +23,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // register mouse event handlers
     canvas.onmousedown = function(e) {
+        console.log('e is the following', e);
+        const rect = canvas.getBoundingClientRect();
+        // so that mouse pos = draw_line pos
+        mouse.pos.x = e.clientX - rect.left;
+        mouse.pos.y = e.clientY - rect.top;
         mouse.click = true;
     };
     canvas.onmouseup = function(e) {
         mouse.click = false;
     };
     canvas.onmousemove = function(e) {
-        // normalize mouse position to range 0.0 - 1.0
-        mouse.pos.x = e.clientX / width;
-        mouse.pos.y = e.clientY / height;
+        console.log(e.clientX, e.clientY);
+        const rect = canvas.getBoundingClientRect();
+        // so that mouse pos = draw_line pos
+        mouse.pos.x = e.clientX - rect.left;
+        mouse.pos.y = e.clientY - rect.top;
         mouse.move = true;
     };
+
     // draw line received from server
     socket.on('draw_line', function(data) {
-        // if (!isDrawing) return;
-        console.log(data);
         const line = data.line;
         context.strokeStyle = 'red';
-        context.beginPath();
-        context.moveTo(line[0].x * width, line[0].y * height);
-        context.lineTo(line[1].x * width, line[1].y * height);
         context.lineWidth = 2;
+        context.beginPath();
+        context.moveTo(line[0].x, line[0].y);
+        context.lineTo(line[1].x, line[1].y);
         context.stroke();
     });
 
