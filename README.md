@@ -9,7 +9,7 @@
 eslint, node-static
 
 • **dependencies**:
-express, moment, serve-favicon, socket.io
+express, serve-favicon, socket.io
 
 #### How To Use:
 + Click on the link [Node Collaborative Drawing App on Heroku](https://node-collaborative-drawing-app.herokuapp.com/) to land on the collaborative drawing page.
